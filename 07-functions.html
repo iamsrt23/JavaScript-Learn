@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  <script>
+    function function1(){
+      console.log('Hello')
+      console.log(2+2)
+    }
+    function1()
+
+
+    // Parameters
+
+    function calculateTax(parameter1){
+      console.log(parameter1 * 0.1)
+    }
+
+    calculateTax(1000)
+    calculateTax(2000)
+    // 2parameters
+    function calculateTax_2(parameter1,parameter2){
+      console.log(parameter1 * parameter2)
+    }
+
+    calculateTax_2(1000,0.2)
+    calculateTax_2(2000,0.2)
+
+    // default value
+
+    function calculateTax_3(parameter1,parameter2=0.2){
+      console.log(parameter1 * parameter2)
+    }
+
+    calculateTax_3(1000)
+    calculateTax_3(2000)
+
+
+
+
+  </script>
+</body>
+</html>

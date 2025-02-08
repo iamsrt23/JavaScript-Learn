@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booleans</title>
+</head>
+<body>
+  <script>
+    // true or false
+    
+    console.log(3 > 5)
+    console.log(5 == "5")
+    console.log(5 === "5")
+
+    if(true){
+      console.log('Hello')
+    }
+    if(false){
+      console.log('Hello')
+    }else{
+      console.log("Else Block")
+    }
+
+    // Someone Old Enough To drive
+    const age=15
+
+    if(30 >= age){
+      console.log("You can Drive")
+    }else{
+      console.log("You can't Drive")
+    }
+
+    // else if
+
+    if(age>=16){
+      console.log("You Can Drive")
+      console.log('Congrats')
+    }else if(age>=14){
+      console.log("You are almost enough to Drive")
+    }else{
+      console.log("You can't drive")
+    }
+    
+    // 
+    // AND
+
+    console.log(true && false)
+
+    // OR
+    console.log(true || false)
+
+    // NOT
+    console.log(!true)
+
+
+    if (1){
+      console.log("truthy")
+    }
+
+    const cartQuantity = 5
+    if(cartQuantity){
+      console.log('Cart has Products')
+    }
+
+    console.log(!0)
+    // NaN
+    console.log('text'/5)
+    // undefined
+    let variable1;
+    console.log(variable1)
+
+    // Ternary Operator
+    //  condition ? true : flase
+
+    // && operator
+    false && console.log('hello')
+
+
+    // Guard Operator
+
+    const message = 5 && 'hello'
+
+    console.log(message)
+
+  // Default Operator
+  true || value2
+
+  const currency = 'EUR'|| 'USD';
+  console.log(currency)
+  const currency2 = undefined|| 'USD';
+  console.log(currency2)
+
+
+  </script>
+</body>
+</html>
