@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Shipping Calculator</title>
+</head>
+<body>
+  <h4>Amazon Shipping Calculator</h4>
+  <input placeholder="Cost of Order"  onkeydown="handleCostKeyDown(event)" />
+  <button onclick="calculateTotal()" >Calculate</button>
+  <p></p>
+
+
+  <script>
+    // Type Coercion
+    String(25)
+    //  Type is String Only
+    console.log(typeof('25'+5)) // 255
+    console.log(typeof('25'+5)) // 20
+    console.log('25'*5) //125
+    console.log('25'/5) //5
+
+    // Window Object JS automatically add it
+
+    window.document
+    window.console.log('window')
+    window.alert('hello')
+
+    function handleCostKeyDown(event){
+  
+      if(event.key==='Enter'){
+      calculateTotal()
+  }
+
+
+    
+
+    function handleCostKeyDown(event) {
+    if (event.key === 'Enter') {
+      calculateTotal();
+    }
+  }
+
+  function calculateTotal() {
+    const inputElement = document.querySelector('input');
+    let cost = Number(inputElement.value); // Convert to number
+
+    if (cost < 40) {
+      cost += 10;
+    }
+
+    document.querySelector('p').innerText = `Total Cost: $${cost}`;
+  }
+
+    
+
+}
+
+  </script>
+</body>
+</html>

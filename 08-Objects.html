@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <script>
+    // Create an Object
+    const products = {
+      name:'socks',
+      price:1090,
+    };
+    console.log(products)
+    console.log(typeof products)
+
+    // access the property
+    console.log(products.name)
+    console.log(products.price)
+
+    // change values in Object
+    products.name = " Cotton Socks"
+    console.log(products)
+
+    // Add a property
+    products.newProperty = true
+    console.log(products)
+
+    // delete a property
+    delete products.newProperty;
+    console.log(products)
+
+    const product2 = {
+      name:'shirt',
+      'delivery-time':'1 day',
+      rating:{
+        stars:4.5,
+        count:87,
+
+      },
+      fun: function function1(){
+        console.log("the string function inside object")
+      }
+    }
+
+    console.log(product2)
+    console.log(product2.name)
+    console.log(product2['name'])
+    // console.log(product2.delivery-time) // throws an error because - takes as minus
+    console.log(product2['delivery-time'])
+
+    console.log(product2.rating.stars)
+    // To acces a fn inside a object
+    console.log(product2.fun())
+
+
+    console.log(typeof console.log)
+
+    // Builtin Objects 
+
+    // JSON Builtin -> Javascript Object Notation
+
+    // 1. Stringfy convert object to JSON
+    console.log(JSON.stringify(product2))
+    console.log(typeof JSON.stringify(product2))
+
+    // parse -> JSON to Object
+    const jsonstring = JSON.stringify(product2)
+    console.log(JSON.parse(jsonstring))
+
+
+    // localstorage --> Only supports strings by using this we can getItem and setItems
+
+
+    //  Auto Boxing
+    console.log('hello'.length)
+    console.log('hello'.toLocaleUpperCase())
+
+    // Objects are references
+
+    const object1 = {
+      message: 'hello',
+
+    };
+
+    const object2 = object1
+    console.log(object2)
+
+    object1.message="String Updated"
+    console.log(object1)
+    console.log(object2)
+
+
+    const object3 = {
+      message:"String Updated"
+    }
+    console.log(object1 === object3) //false no reference
+    console.log(object2 === object1) //true reference
+
+    // shortcuts
+    const object4 = {
+      message:"String Updated2",
+      price:799
+    }
+
+    // const message = object4.message
+    const {message,price} = object4 // destructuring
+    console.log(price)
+
+    const object5 = {
+      // message: message,
+      message,
+      // method: function function1(){
+      //   console.log('method')
+      // }
+      method(){
+        console.log('method')
+      }
+    }
+    console.log(object5)
+    object5.method()
+  </script>
+</body>
+</html>
