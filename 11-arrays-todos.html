@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-Array</title>
+</head>
+<body>
+  <h4>Todo List Practice 1</h4>
+  <input type="text" placeholder="Todo name" class="js-task-name" />
+  <button onclick="addTodo()">Add</button>
+  <div class="todo-list">
+    
+  </div>
+  <script>
+    const todoList = []
+
+    function renderTodoList(){
+
+      let todoListHtml  = ''
+      for(i=0;i<todoList.length;i++){
+        const todo = todoList[i]
+        const html = `<p>${todo}</p>`
+        todoListHtml += html
+      }
+
+
+      document.querySelector('.todo-list').innerHTML = todoListHtml
+    
+
+      console.log(todoListHtml)
+    }
+    function addTodo(){
+      const inputElement = document.querySelector('.js-task-name')
+      const task = inputElement.value
+      console.log(task)
+      todoList.push(task)
+      console.log(todoList)
+      inputElement.value=""
+      renderTodoList()
+
+    }
+
+    
+
+    
+
+  </script>
+</body>
+</html>
