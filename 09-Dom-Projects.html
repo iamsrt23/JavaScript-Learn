@@ -4,10 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dom Projects</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .subscribe-button{
+      border:none;
+      border-radius: 50px;
+      background-color: black;
+      color: white;
+      padding: 10px 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom:30px;
+
+    }
+
+    .is-subscribed{
+      background-color: rgb(240,240,240);
+      color: black;
+    }
+
+    
+  </style>
 </head>
 <body>
   <h4>Youtube Subscribe Button</h4>
-  <button onclick="subscribe()" class="subscribe">
+  <button onclick="subscribe()" class=" subscribe subscribe-button">
     Subscribe
   </button>
 
@@ -18,8 +42,12 @@
 
     if(buttonElement.innerText === 'Subscribe'){
       buttonElement.innerHTML = 'Subscribed'
+      // class added using classlist
+      buttonElement.classList.add('is-subscribed');
     }else{
-      buttonElement.innerHTML = 'Subscribe'
+      buttonElement.innerHTML = 'Subscribe';
+      // Class remove Using Class List
+      buttonElement.classList.remove('is-subscribed')
     }
 
     }
