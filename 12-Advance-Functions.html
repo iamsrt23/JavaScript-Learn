@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advance Functions</title>
+</head>
+<body>
+
+  <button onclick="" class="js-button">Click</button>
+
+
+
+
+
+  <script>
+
+   const buttonElement =  document.querySelector('.js-button');
+
+   const eventListener = ()=>{
+    console.log('click removed')
+   }
+
+  //  .addEventListener(event,function)
+   buttonElement.addEventListener('click',eventListener)
+
+   buttonElement.removeEventListener('click',eventListener)
+
+   buttonElement.addEventListener('click',()=>{
+    console.log('click2')
+   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function greeting(){
+      console.log("Hello")
+    }
+    greeting()
+
+    const num = 2;
+    const function1 = function greeting(){
+      console.log('Hello2')
+    }
+
+    console.log(function1)
+    function1()
+    const object1 = {
+      num:2,
+      fun: function (){
+        console.log('Hello 3')
+      }
+    }
+    object1.fun()
+    // passing a value into a function
+    function display(param){
+      console.log(param)
+    }
+    display(3)
+
+    // function as a param called call back function
+
+    function run(param){
+      param()
+
+    }
+
+    run(function(){
+      console.log('Hello4')
+    })
+
+
+    // setTimeout
+
+    setTimeout(function(){
+      console.log('timeout')
+      console.log('timeout2')
+    },2000);
+
+
+    // Asynchronous code
+    console.log('next line')
+
+
+
+    // setInterval runs every 3 sec
+
+    // setInterval(function(){
+    //   console.log('interval')
+    // },3000)
+    // console.log('nextline2')
+
+
+
+    // loop through an array
+  const tasks = [
+    'make dinner',
+    'wash dishes',
+    'watch youtube'
+  ];
+
+tasks.forEach(function(value,index) {
+  console.log(value,index);
+});
+
+tasks.forEach(function(value,index){
+  // to break a loop
+  if (value === 'wash dishes'){
+    return ;
+  }
+  console.log(index,value)
+})
+
+
+
+// Arrow Functions
+
+const regularFunction = function(){
+  console.log('Hello regular')
+}
+regularFunction()
+
+const arrowFunction = () =>{
+  console.log('Hello')
+}
+
+arrowFunction()
+
+// only one param
+const oneParam = param =>{
+  console.log(param + 1)
+}
+
+oneParam(2)
+
+const oneLine = ()=> 2 + 3;
+
+console.log(oneLine())
+
+// forEach
+
+const tasks2 = [
+    'make dinner',
+    'wash dishes',
+    'watch youtube'
+  ];
+
+
+
+tasks2.forEach((value,index)=>{
+  console.log(value)
+  console.log(index)
+})
+
+const object2 = {
+  method:()=>{
+
+  },
+  method(){
+
+  }
+}
+
+// filter 
+const array5 = [1,-3,5] //[1,5]
+
+result = array5.filter((value,index)=>{
+
+  if(value>=0){
+    return true
+  }else{
+    return false
+  }
+
+})
+
+console.log(result)
+
+// map
+
+const array6 = [1,1,3]
+
+const result2 = array6.map((value,index)=>{
+  return(
+    value * 2
+  )
+
+})
+
+console.log(result2)
+
+
+// closure
+
+
+
+
+
+
+  </script>
+</body>
+</html>

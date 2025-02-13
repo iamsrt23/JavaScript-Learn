@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .delete-btn{
+      background-color:darkred;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .add-btn{
+      background-color: green;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .todo-name{
+      padding: 10px 12px
+    }
+    .date{
+      padding: 9px 12px;
+    }
+
+    .todo-list, .todo-input{
+      display: grid;
+      grid-template-columns: 200px 150px 100px;
+      margin: 10px;
+      column-gap: 10px;
+      row-gap: 10px;
+      align-items: center;
+     
+    }
+    .todo-input{
+      align-items: stretch;
+      margin-bottom: 10px;
+    }
+    
+    
+  </style>
+</head>
+<body>
+
+  <h4>Todo List</h4>
+ <div class="todo-input">
+  <input type="text" placeholder="Enter Task"  class="todo-name"/>
+  <input type="date" class="date" />
+  <button class="add-btn" onclick="addTodo()">Add</button>
+ </div>
+
+  <div class="todo-list">
+
+  </div>
+
+
+  <script>
+    const todoList = []
+    console.log(todoList)
+    function renderTodoList(){
+      let todoListHtml = ""
+
+      todoList.forEach((todoObject,index)=>{
+        const {name,dueDate} = todoObject
+        const html = `<div> ${name}</div><div> ${dueDate}</div>
+          <button onclick="
+          todoList.splice(${index},1);
+          renderTodoList()
+          " class="delete-btn">Delete</button>`
+        todoListHtml += html
+      })
+      document.querySelector('.todo-list').innerHTML = todoListHtml
+      
+    }
+
+      
+
+
+    function addTodo(){
+      const inputElement = document.querySelector('.todo-name')
+      const name = inputElement.value
+      const dateInputElement = document.querySelector('.date')
+      const dueDate = dateInputElement.value
+      console.log(name)
+      todoList.push({
+        name:name,
+        dueDate:dueDate,
+      
+      })
+      inputElement.value = ""
+      dateInputElement.value=""
+      renderTodoList()
+    }
+  </script>
+  
+</body>
+</html>

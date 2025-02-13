@@ -103,6 +103,40 @@
         break
       }
     }
+
+    let j = 1;
+    while(j<10){
+      if(j%3==0){
+        j++;
+        continue
+      }
+      console.log(j)
+      j++;
+    }
+
+
+    // functions with loops
+
+    function doubledArray(nums){
+      const numDoubled = [];
+      for(let i=0; i<nums.length;i++){
+        const num = nums[i]
+        if(num == 0){
+          break
+        }
+        numDoubled.push(num * 2)
+      }
+      return numDoubled
+    }
+    console.log(doubledArray([1,2,3]))
+    console.log(doubledArray([2,3,4,5,0,10]))
+    
+
+
+
+
+
+
   </script>
 </body>
 </html>
