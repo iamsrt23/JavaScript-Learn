@@ -1,3 +1,6 @@
+import { cart,addToCart} from "../data/cart.js"
+import { products } from "../data/products.js"
+import { formatCurrency } from "./utils/money.js"
 // const products = [
 //   {
 //     image:"images/products/athletic-cotton-socks-6-pairs.jpg",
@@ -74,11 +77,11 @@ products.forEach((product)=>{
           </div>
 
           <div class="product-price">
-            $${(product.priceCents/100).toFixed(2)}
+            $${formatCurrency(product.priceCents)}
           </div>
 
           <div class="product-quantity-container">
-            <select>
+            <select class='js-quantity-selector' data-testid="quantity-selector">
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -110,8 +113,34 @@ products.forEach((product)=>{
 // console.log(productsHTML)
 
 
-// Add to cart 
+
+
+
+
+
+
+
+
+
+
 document.querySelector('.js-products-grid').innerHTML = productsHTML
+
+function updateCartQuantity(){
+  let cartQuantity = 0
+
+
+  cart.forEach((cartItem)=>{
+    cartQuantity += cartItem.quantity
+
+  })
+
+  // update the quantity in DOM
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
+
+}
+
+
+
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button)=>{
@@ -121,39 +150,16 @@ document.querySelectorAll('.js-add-to-cart')
       // Based on Product id we update the cart
       const productId = button.dataset.productId;
 
-      let matchingItem ;
+      addToCart(productId)
 
       // if product already in the cart
-      cart.forEach((item)=>{
-        if(productId === item.productId){
-          matchingItem = item
-        }
-
-      })
-
-      if(matchingItem){
-        matchingItem.quantity +=1;
-      }else{
-        cart.push({
-          productId: productId,
-          quantity:1
-        })
-      }
-
-      let cartQuantity = 0
-
-
-      cart.forEach((item)=>{
-        cartQuantity += item.quantity
-
-      })
-
-      // update the quantity in DOM
-      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity
-
-      console.log(cartQuantity)
       
-      console.log(cart)
+      updateCartQuantity()
+      
+
+      // console.log(cartQuantity)
+      
+      // console.log(cart)
 
       
     })
