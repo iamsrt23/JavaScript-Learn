@@ -9,7 +9,7 @@ import { formatCurrency } from "../utils/money.js";
 export function renderPaymentSummary(){
   // Save the Data
   
-  // Make it interactive
+  
   let productPriceCents = 0;
   let shippingPricecents = 0
   
